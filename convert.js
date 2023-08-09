@@ -27,7 +27,7 @@ async function convert(inputPath, outputPath, pdfOptions, launchOptions) {
 }
 
 async function run() {
-  console.log(process.cwd);
+  console.log(process.cwd());
 
   try {
     const inputPath = actions.getInput('inputPath');
