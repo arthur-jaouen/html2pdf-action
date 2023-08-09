@@ -34,7 +34,7 @@ async function run() {
 
     await convert(inputPath, outputPath, pdfOptions ? JSON.parse(pdfOptions) : {}, {
       headless: 'new',
-      args: ['--no-sandbox', '--headless', '--disable-gpu', '--font-render-hinting=medium'],
+      args: ['--no-sandbox', '--headless', '--disable-gpu', '--font-render-hinting=none'],
     });
   } catch (error) {
     actions.setFailed(error.message);
