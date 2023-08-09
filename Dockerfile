@@ -1,6 +1,6 @@
 FROM node:18-slim
 
-RUN apt-get update \
+RUN apt-get -qq update \
     && apt-get -qq install -y wget gnupg \
     && wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | gpg --dearmor | tee /etc/apt/trusted.gpg.d/chrome.gpg \
     && sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list' \
