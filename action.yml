@@ -1,0 +1,20 @@
+name: "HTML to PDF"
+description: "Convert HTML file to PDF using Puppeteer"
+author: "arthur.jaouen@gmail.com"
+inputs:
+  inputPath:
+    description: "Path to the html to be converted"
+    required: true
+
+  outputPath:
+    description: "Path of the output PDF"
+    required: true
+
+  pdfOptions:
+    description: "Puppeteer PDF options (see https://github.com/puppeteer/puppeteer/blob/main/docs/api/puppeteer.pdfoptions.md#pdfoptions-interface)"
+    required: false
+    default: "{}"
+
+runs:
+  using: "docker"
+  image: "Dockerfile"

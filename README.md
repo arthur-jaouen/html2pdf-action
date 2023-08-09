@@ -1,2 +1,3 @@
 # html2pdf-action
-Convert HTML documents to PDF using Puppeteer
+
+Github action to convert HTML documents to PDF using Puppeteer

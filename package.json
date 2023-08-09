@@ -1,0 +1,30 @@
+{
+  "name": "html2pdf-action",
+  "version": "0.0.1",
+  "description": "Convert HTML file to PDF using Puppeteer",
+  "author": "Arthur Jaouen",
+  "license": "MIT",
+  "repository": "git@github.com:arthur-jaouen/html2pdf-action.git",
+  "homepage": "https://arthur-jaouen.github.io/html2pdf-action",
+  "type": "module",
+  "main": "convert.js",
+  "scripts": {
+    "up": "yarn upgrade --latest"
+  },
+  "dependencies": {
+    "@actions/core": "^1.0.0",
+    "@actions/exec": "^1.0.0",
+    "@actions/github": "^5.1.1",
+    "@actions/io": "^1.0.0",
+    "@actions/tool-cache": "^2.0.1",
+    "finalhandler": "^1.1.2",
+    "prettier": "^3.0.1",
+    "serve-static": "^1.14.1"
+  },
+  "devDependencies": {},
+  "prettier": {
+    "printWidth": 100,
+    "tabWidth": 2,
+    "singleQuote": true
+  }
+}
