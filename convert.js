@@ -27,12 +27,15 @@ async function convert(inputPath, outputPath, pdfOptions, launchOptions) {
 }
 
 async function run() {
+  console.log(process.cwd);
+
   try {
     const inputPath = actions.getInput('inputPath');
     const outputPath = actions.getInput('outputPath');
     const pdfOptions = actions.getInput('pdfOptions');
 
     await convert(inputPath, outputPath, pdfOptions ? JSON.parse(pdfOptions) : {}, {
+      headless: 'new',
       args: ['--no-sandbox', '--headless', '--disable-gpu', '--font-render-hinting=none'],
     });
   } catch (error) {
