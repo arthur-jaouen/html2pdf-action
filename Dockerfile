@@ -12,9 +12,13 @@ RUN apt-get update \
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
 ENV PUPPETEER_EXECUTABLE_PATH=/usr/bin/google-chrome-stable
 
-RUN npm init -y &&  \
-    npm i puppeteer \
-    && groupadd -r pptruser && useradd -r -g pptruser -G audio,video pptruser \
+WORKDIR /
+
+COPY . .
+
+RUN npm install --production
+
+RUN groupadd -r pptruser && useradd -r -g pptruser -G audio,video pptruser \
     && mkdir -p /home/pptruser/Downloads \
     && chown -R pptruser:pptruser /home/pptruser \
     && chown -R pptruser:pptruser /node_modules \
@@ -22,9 +26,5 @@ RUN npm init -y &&  \
     && chown -R pptruser:pptruser /package-lock.json
 
 USER pptruser
-
-COPY . .
-
-RUN npm install --production
 
 ENTRYPOINT ["node", "/convert.js"]
