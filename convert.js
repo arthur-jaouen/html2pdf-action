@@ -27,8 +27,6 @@ async function convert(inputPath, outputPath, pdfOptions, launchOptions) {
 }
 
 async function run() {
-  console.log(process.cwd());
-
   try {
     const inputPath = actions.getInput('inputPath');
     const outputPath = actions.getInput('outputPath');
@@ -36,7 +34,7 @@ async function run() {
 
     await convert(inputPath, outputPath, pdfOptions ? JSON.parse(pdfOptions) : {}, {
       headless: 'new',
-      args: ['--no-sandbox', '--headless', '--disable-gpu'],
+      args: ['--no-sandbox', '--headless', '--disable-gpu', '--font-render-hinting=medium'],
     });
   } catch (error) {
     actions.setFailed(error.message);
