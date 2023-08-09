@@ -1,5 +1,5 @@
-name: "HTML to PDF"
-description: "Convert HTML file to PDF using Puppeteer"
+name: "HTML to PDF with Puppeteer and the real Google Chrome"
+description: "Convert HTML file to PDF using Puppeteer and Google Chrome (not Chromium)"
 author: "arthur.jaouen@gmail.com"
 inputs:
   inputPath:
