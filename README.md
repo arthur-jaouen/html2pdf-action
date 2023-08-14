@@ -6,7 +6,7 @@ Github action to convert HTML documents to PDF using Puppeteer
 
 ```yml
 - name: Generate PDF
-  uses: arthur-jaouen/html2pdf-action@main
+  uses: arthur-jaouen/html2pdf-action@v1
   with:
     inputPath: './index.html'
     outputPath: './output.pdf'
